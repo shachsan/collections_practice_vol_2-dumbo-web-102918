@@ -51,11 +51,10 @@ def find_cool(arr_h)
   arr_h.select {|h|h[:temperature]=='cool'}
 end
 
-
+##organizes the schools by location
 def organize_schools(hash)
-  
-  organized = Hash.new
 
+  organized = Hash.new
   locations = hash.map {|k, v|v[:location]}
 
   locations.uniq.each do |loc|
@@ -65,33 +64,7 @@ def organize_schools(hash)
         schools << school
       end
     end
-
      organized[loc]= schools
-
   end
-
-    organized
+  organized
 end
-
-#
-# schs = {
-#   "flatiron school bk" => {
-#     :location => "NYC"
-#   },
-#   "flatiron school" => {
-#     :location => "NYC"
-#   },
-#   "dev boot camp" => {
-#     :location => "SF"
-#   },
-#   "dev boot camp chicago" => {
-#     :location => "Chicago"
-#   },
-#   "general assembly" => {
-#     :location => "NYC"
-#   },
-#   "Hack Reactor" => {
-#     :location => "SF"
-#   }
-# }
-# organize_schools(schs)
