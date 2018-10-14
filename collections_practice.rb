@@ -53,7 +53,7 @@ end
 
 
 def organize_schools(hash)
-  schools=[]
+  
   organized = Hash.new
 
   locations = hash.map {|k, v|v[:location]}
