@@ -1,20 +1,25 @@
+#Return true if every element of the tools array starts with an "r" and false otherwise.
+##return false if there's an element that does not begin with r
 def begins_with_r(arr)
   arr.all? {|ele|ele.start_with?('r')|| ele.start_with?('R')}
 end
 
-
+#return all elements that contain the letter 'a'
 def contain_a(arr)
   arr.select {|ele|ele.include?('a')}
 end
 
+#Return the first element that begins with the letters 'wa'
 def first_wa(arr)
   arr.find {|ele|ele.is_a?(String) && ele.start_with?('wa')}
 end
 
+#remove anything that's not a string from an array
 def remove_non_strings(arr)
   arr.reject {|ele|!ele.is_a?(String)}
 end
 
+#count how many times something appears in an array
 def count_elements(arr)
   count_ele = []
   names = arr.map {|h|h[:name]}.uniq
@@ -30,7 +35,7 @@ def count_elements(arr)
   count_ele
 end
 
-
+##combines two nested data structures into one
 def merge_data(arr1, arr2)
   merge = []
   persons = arr1.map {|h|h[:first_name]}
@@ -47,6 +52,7 @@ def merge_data(arr1, arr2)
    merge
 end
 
+#find all cool hashes
 def find_cool(arr_h)
   arr_h.select {|h|h[:temperature]=='cool'}
 end
